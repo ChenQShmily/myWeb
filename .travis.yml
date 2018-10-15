@@ -1,1 +1,6 @@
-langeuage:pythonscript:ture
+env:
+  DJANGO_VERSION=1.9.13
+  
+install:
+  pip install -q Django==$DJANGO_VERSION
+  python setup.py -q install
