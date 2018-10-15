@@ -2,5 +2,7 @@ language:
   python
 python:
   "3.6"
+pytest:
+  "3.8.2"
 script:
   py.test
