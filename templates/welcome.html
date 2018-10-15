@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>websites</title>
+    <style>
+        body {
+            background-color: lightyellow;
+        }
+    </style>
+</head>
+
+<body>
+    <form class="form-horizontal" action="/login/" method="post">
+        {% csrf_token %}
+        <div class="header">
+            <h1 class="site-title text-center">
+                <a href="/">Home</a>
+            </h1>
+        </div>
+        {% if request.user.is_authenticated %}
+        <div>shmily，你好！</div>
+        <div><a href="/welcome">登出</a></div>
+        {% else %}
+        <div class="login">
+            <a class="user_login" href="login/">
+                    登录<i class="fa fa-arrow-right"></i>
+                </a>
+        </div>
+        {% endif %}
+        <div class="container">
+            {% for web in web_list %}
+            <div class="web-wrapper">
+                <div class="web">
+                    <div class="web-heading">
+                        <h2 class="title">
+                            <a href="{% url 'newsContent' pk=web.pk %}">{{ web.title }}</a> {% if request.user.is_authenticated %}
+                            <a href="{% url 'newsDelete' pk=web.pk %}">delete</a> {% endif %}
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </form>
+</body>
+
+
+
+</html>
