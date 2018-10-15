@@ -1,1 +1,2 @@
-langauge:python:true
+langauge:python
+script: make test
