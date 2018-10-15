@@ -1,2 +1,4 @@
-language: python
-script:true
+language: 
+  python
+script:
+  true
