@@ -1,5 +1,8 @@
-language: python
-  python:
-     "3.6"
-  script:
-    pytest
+language: 
+  python 
+sudo: 
+  required 
+before_install: 
+  sudo pip install foo 
+script: 
+  py.test
