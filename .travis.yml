@@ -2,7 +2,7 @@ language:
   python
 python:
   "3.6"
-pytest:
-  "3.8.2"
+django:
+  "1.9.13"
 script:
   python manage.py test
